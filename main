@@ -1,0 +1,17 @@
+#!/bin/bash
+#PBS -l nodes=1:ppn=8:dc2,walltime=0:10:00
+#PBS -N tck2trk
+#PBS -V
+
+which module && module load python
+
+python main.py > stdout.log 2> stderr.log
+
+if [ -s track.trk ] 
+then
+	echo 0 > finished
+else
+	echo "failed"
+	echo 1 > finished
+	exit 1
+fi
