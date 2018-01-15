@@ -1,5 +1,5 @@
-import nipype.interfaces.mrtrix as mrt
 import dipy
+import nipype.interfaces.mrtrix as mrt
 import os
 import json
 
