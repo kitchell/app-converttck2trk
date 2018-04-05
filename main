@@ -3,9 +3,10 @@
 #PBS -N tck2trk
 #PBS -V
 
-which module && module load python
+module load singularity 2> /dev/null
 
-python main.py > stdout.log 2> stderr.log
+singularity exec -e docker://brainlife/dipy ./main.py
+
 
 if [ -s track.trk ] 
 then
