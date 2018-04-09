@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-#import dipy
+import dipy
 import nipype.interfaces.mrtrix as mrt
 import os
 import json
